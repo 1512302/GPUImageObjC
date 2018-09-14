@@ -10,10 +10,16 @@
 
 @implementation SaturationAdjustment
 
+- (void)setSaturation:(float)saturation {
+    _saturation = saturation;
+    self.uniformSetting.uniformValues[0] = @(saturation);
+}
+
 - (instancetype)init {
     self = [super initWithVertexFuntionName:nil fragmentFunctionName:@"saturationFragment" numberOfInputs:1 operationName:@"SaturationAdjustment"];
     if (self) {
         _saturation = 1.0;
+        [self.uniformSetting.uniformValues addObject:@(_saturation)];
     }
     return self;
 }

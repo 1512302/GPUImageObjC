@@ -13,30 +13,27 @@
 
 @synthesize targets = _targets;
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _targets = [TargetContainer new];
-        _source = [SourceContainer new];
-        
-        _uniformSetting = [ShaderUniformSettings new];
-        
-        _activatePassthroughOnNextFrame = false;
-        _useMetalPerformanceShaders = false;
-        
-        _inputTextures = [NSMutableDictionary new];
-        _textureInputSemaphore = dispatch_semaphore_create(1);
-        _useNormalizedTextureCoordinates = true;
-    }
-    return self;
+- (void)commonInit {
+    _targets = [TargetContainer new];
+    _source = [SourceContainer new];
+    
+    _uniformSetting = [ShaderUniformSettings new];
+    
+    _activatePassthroughOnNextFrame = false;
+    _useMetalPerformanceShaders = false;
+    
+    _inputTextures = [NSMutableDictionary new];
+    _textureInputSemaphore = dispatch_semaphore_create(1);
+    _useNormalizedTextureCoordinates = true;
 }
 
 - (instancetype)initWithVertexFuntionName:(nullable NSString *)vertexFunctionName
                      fragmentFunctionName:(NSString *)fragmentFunctionName
                            numberOfInputs:(NSUInteger)numberOfInputs
                             operationName:(NSString *)operationName {
-    self = [self init];
+    self = [super init];
     if (self) {
+        [self commonInit];
         self.maximumInputs = numberOfInputs;
         self.operationName = operationName;
         NSString *concreteVertexFunctionName = vertexFunctionName ? vertexFunctionName : defaultVertexFunctionNameForInputs(numberOfInputs);

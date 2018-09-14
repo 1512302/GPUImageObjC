@@ -94,10 +94,14 @@
         return;
     }
 //    NSAssert(_uniformValues.count > 0, @"_uniformValues.count <= 0");
-    float *uniformValuesDraw = nsArray2FloatArray(_uniformValues);
-    [[MetalRenderingDevice shared].device newBufferWithBytes:uniformValuesDraw length:_uniformValues.count * sizeof(float)  options:MTLResourceOptionCPUCacheModeDefault];
-    free(uniformValuesDraw);
     
+    __weak __typeof(self) weakSelf = self;
+    dispatch_sync(_shaderUniformSettingsQueue, ^{
+        float *uniformValuesDraw = nsArray2FloatArray(weakSelf.uniformValues);
+        id<MTLBuffer> uniformBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:uniformValuesDraw length:weakSelf.uniformValues.count * sizeof(float)  options:MTLResourceOptionCPUCacheModeDefault];
+        [renderEncoder setFragmentBuffer:uniformBuffer offset:0 atIndex:1];
+        free(uniformValuesDraw);
+    });
 }
 
 @end

@@ -14,17 +14,14 @@
 
 @implementation Texture
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _timingStyle = TextureTimingStillImage;
-    }
-    return self;
+- (void)commonInit {
+    _timingStyle = TextureTimingStillImage;
 }
 
 - (instancetype)initWithOrientation:(ImageOrientation)orientation texture:(id<MTLTexture>)texture {
-    self = [self init];
+    self = [super init];
     if (self) {
+        [self commonInit];
         _orientation = orientation;
         _texture = texture;
     }
@@ -32,9 +29,13 @@
 }
 
 - (instancetype)initWithDevice:(id<MTLDevice>)device orientation:(ImageOrientation)orientation width:(int32_t)width height:(int32_t)height {
-    self = [self init];
+    self = [super init];
     if (self) {
+        [self commonInit];
         MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:width height:height mipmapped:false];
+        
+        textureDescriptor.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead | MTLTextureUsageShaderWrite;
+        
         _orientation = orientation;
         _texture = [[MetalRenderingDevice shared].device newTextureWithDescriptor:textureDescriptor];
     }

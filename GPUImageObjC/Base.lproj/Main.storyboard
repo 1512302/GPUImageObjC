@@ -717,7 +717,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="X1t-PT-sHm"/>
                                 </constraints>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Fxg-Fe-mj7"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="37.096899950099797" tickMarkPosition="above" sliderType="linear" id="Fxg-Fe-mj7">
+                                    <connections>
+                                        <action selector="sliderAction:" target="XfG-lQ-9wD" id="bSP-dj-P19"/>
+                                    </connections>
+                                </sliderCell>
                             </slider>
                         </subviews>
                         <constraints>
@@ -732,6 +736,7 @@
                     </view>
                     <connections>
                         <outlet property="renderView" destination="Aee-si-Gs9" id="bDy-bS-MxW"/>
+                        <outlet property="slider" destination="biv-0r-kIG" id="WuC-jT-9U1"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

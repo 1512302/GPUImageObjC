@@ -36,8 +36,6 @@ NSString *defaultVertexFunctionNameForInputs(NSUInteger inputCount);
 
 @property (nonatomic, readwrite, strong) void(^metalPerformanceShaderPathway)(id<MTLCommandBuffer> commandBuffer, NSMutableDictionary<NSNumber *, Texture *> *inputTextures, Texture *texture);
 
-- (instancetype)init;
-
 - (instancetype)initWithVertexFuntionName:(nullable NSString *)vertexFunctionName
                      fragmentFunctionName:(NSString *)fragmentFunctionName
                            numberOfInputs:(NSUInteger)numberOfInputs
