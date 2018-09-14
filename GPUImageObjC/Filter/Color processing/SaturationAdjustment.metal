@@ -1,5 +1,6 @@
 #include <metal_stdlib>
-#include "OperationShaderTypes.h"
+#include "../OperationShaderTypes.h"
+
 using namespace metal;
 
 typedef struct

@@ -9,13 +9,15 @@
 #import "ViewController.h"
 #import "RenderView.h"
 #import "PictureInput.h"
-
+#import "SaturationAdjustment.h"
 
 @interface ViewController ()
 
 @property (weak) IBOutlet RenderView *renderView;
 
 @property (nonatomic, readwrite, strong) PictureInput *image;
+
+@property (nonatomic, readwrite, strong) SaturationAdjustment *filter;
 
 //
 
@@ -42,6 +44,8 @@
     [super viewDidLoad];
     NSImage *inputImage = [NSImage imageNamed:@"Lambeau.jpg"];
     CGImageRef cgImage = [inputImage CGImageForProposedRect:nil context:nil hints:nil];
+    
+    _filter = [SaturationAdjustment new];
     
     _image = [[PictureInput alloc] initWithCGImage:cgImage];
     [_image additionPrecedence:_renderView];

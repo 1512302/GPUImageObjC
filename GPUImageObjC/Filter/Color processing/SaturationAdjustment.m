@@ -11,9 +11,9 @@
 @implementation SaturationAdjustment
 
 - (instancetype)init {
-    self = [super init];
+    self = [super initWithVertexFuntionName:nil fragmentFunctionName:@"saturationFragment" numberOfInputs:1 operationName:@"SaturationAdjustment"];
     if (self) {
-        <#statements#>
+        _saturation = 1.0;
     }
     return self;
 }
