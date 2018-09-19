@@ -91,15 +91,3 @@ id<MTLRenderPipelineState> generateRenderPipelineState(MetalRenderingDevice *dev
     descriptor.fragmentFunction = fragmentFunction;
     return [device.device newRenderPipelineStateWithDescriptor:descriptor error:nil];
 }
-
-id<MTLTexture> getTexture() {
-    __block id<MTLTexture> texture;
-    MTKTextureLoader *textureLoader = [[MTKTextureLoader alloc] initWithDevice:[MetalRenderingDevice shared].device];
-    
-    NSImage *inputImage = [NSImage imageNamed:@"Lambeau.jpg"];
-    CGImageRef cgImage = [inputImage CGImageForProposedRect:nil context:nil hints:nil];
-    [textureLoader newTextureWithCGImage:cgImage options:@{MTKTextureLoaderOptionSRGB:@(NO)} completionHandler:^(id<MTLTexture>  _Nullable texture, NSError * _Nullable error) {;
-        texture = texture;
-    }];
-    return texture;
-}

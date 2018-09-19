@@ -17,7 +17,7 @@
     _targets = [TargetContainer new];
     _source = [SourceContainer new];
     
-    _uniformSetting = [ShaderUniformSettings new];
+    _uniformSetting = nil;
     
     _activatePassthroughOnNextFrame = false;
     _useMetalPerformanceShaders = false;

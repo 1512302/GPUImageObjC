@@ -33,7 +33,7 @@
     CGImageRef cgImage = [inputImage CGImageForProposedRect:nil context:nil hints:nil];
     
     _filter = [[SaturationAdjustment alloc] init];
-    _filter.saturation = 3.0;
+    _filter.saturation = 1.0;
     
     _image = [[PictureInput alloc] initWithCGImage:cgImage];
     [_image additionPrecedence:_filter];
@@ -49,7 +49,7 @@
 }
 
 - (IBAction)sliderAction:(id)sender {
-    _filter.saturation = _slider.floatValue;
+    _filter.saturation = _slider.floatValue * 2.0 / _slider.maxValue;
     [_image processImage];
 }
 

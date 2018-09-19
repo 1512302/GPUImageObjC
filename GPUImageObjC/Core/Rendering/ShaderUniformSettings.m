@@ -15,31 +15,49 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _uniformValues = [NSMutableArray new];
-        _uniformValueOffsets = [NSMutableArray new];
         _colorUniformsUseAlpha = false;
+        _uniformValue = nil;
+        _length = 0;
         _shaderUniformSettingsQueue = dispatch_queue_create("com.sunsetlakesoftware.GPUImage.shaderUniformSettings", DISPATCH_QUEUE_SERIAL);
+    }
+    return self;
+}	    
+
+- (instancetype)initWithLength:(NSUInteger)length {
+    self = [self init];
+    if (self) {
+        _length = length;
+        _uniformValue = calloc(length, sizeof(float));
     }
     return self;
 }
 
-- (NSUInteger)internalIndexForIndex:(NSUInteger)index {
-    if (index == 0) {
-        return 0;
-    } else {
-        return [_uniformValueOffsets[index - 1] intValue];
+- (void)dealloc {
+    if (_uniformValue) {
+        free(_uniformValue);
     }
 }
 
-- (id)objectAtIndex:(NSUInteger)index {
-    NSUInteger internalIndex = [self internalIndexForIndex:index];
-    return _uniformValues[internalIndex];
+- (BOOL)validateIndex:(NSUInteger)index {
+    if (index >= _length) {
+        NSLog(@"loctp2: ShaderUniformSetting setValue:atIndex index >= length: %ld >= %ld", index, _length);
+        return NO;
+    }
+    return YES;
 }
 
-- (void)setObject:(id)object atIndex:(NSUInteger)index {
-    
+- (void)setValue:(float)value atIndex:(NSUInteger)index {
+    if ([self validateIndex:index]) {
+        _uniformValue[index] = value;
+    }
 }
 
+- (void)setValues:(float *)values withLength:(NSUInteger)length atIndex:(NSUInteger)index {
+    for (int i = 0; i < length; ++i) {
+        [self setValue:values[i] atIndex:index];
+        ++index;
+    }
+}
 
 //- (void)setFloat:(float)value atIndex:(NSUInteger)index {
 //    
@@ -90,17 +108,14 @@
 //}
 //
 - (void)restoreShaderSettingWithRenderEncoder:(id<MTLRenderCommandEncoder>) renderEncoder {
-    if (_uniformValues.count <= 0) {
+    if (_length == 0) {
         return;
     }
-//    NSAssert(_uniformValues.count > 0, @"_uniformValues.count <= 0");
     
     __weak __typeof(self) weakSelf = self;
     dispatch_sync(_shaderUniformSettingsQueue, ^{
-        float *uniformValuesDraw = nsArray2FloatArray(weakSelf.uniformValues);
-        id<MTLBuffer> uniformBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:uniformValuesDraw length:weakSelf.uniformValues.count * sizeof(float)  options:MTLResourceOptionCPUCacheModeDefault];
+        id<MTLBuffer> uniformBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:weakSelf.uniformValue length:weakSelf.length * sizeof(float)  options:MTLResourceOptionCPUCacheModeDefault];
         [renderEncoder setFragmentBuffer:uniformBuffer offset:0 atIndex:1];
-        free(uniformValuesDraw);
     });
 }
 

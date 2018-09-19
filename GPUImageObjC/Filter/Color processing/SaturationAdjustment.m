@@ -12,14 +12,15 @@
 
 - (void)setSaturation:(float)saturation {
     _saturation = saturation;
-    self.uniformSetting.uniformValues[0] = @(saturation);
+    [self.uniformSetting setValue:saturation atIndex:0];
 }
 
 - (instancetype)init {
     self = [super initWithVertexFuntionName:nil fragmentFunctionName:@"saturationFragment" numberOfInputs:1 operationName:@"SaturationAdjustment"];
     if (self) {
         _saturation = 1.0;
-        [self.uniformSetting.uniformValues addObject:@(_saturation)];
+        self.uniformSetting = [[ShaderUniformSettings alloc] initWithLength:1];
+        [self.uniformSetting setValue:1 atIndex:0];
     }
     return self;
 }

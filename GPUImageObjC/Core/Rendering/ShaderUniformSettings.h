@@ -10,27 +10,23 @@
 
 @import MetalKit;
 
-@protocol UniformConvertible
-
-@required
-
-- (NSArray *)toFloatArray;
-
-- (NSInteger)uniformSize;
-
-@end
-
 @interface ShaderUniformSettings : NSObject
-
-@property (nonatomic, strong) NSMutableArray *uniformValues;
-
-@property (nonatomic, strong) NSMutableArray *uniformValueOffsets;
 
 @property (nonatomic) Boolean colorUniformsUseAlpha;
 
 @property (nonatomic) dispatch_queue_t shaderUniformSettingsQueue;
 
-- (NSUInteger)internalIndexForIndex:(NSUInteger)index;
+@property (nonatomic, readonly) float *uniformValue;
+
+@property (nonatomic, readwrite) NSUInteger length;
+
+- (instancetype)initWithLength:(NSUInteger)length;
+
+- (void)setValue:(float)value atIndex:(NSUInteger)index;
+
+- (void)setValues:(float *)values withLength:(NSUInteger)length atIndex:(NSUInteger)index;
+
+- (void)restoreShaderSettingWithRenderEncoder:(id<MTLRenderCommandEncoder>) renderEncoder;
 
 //- (float)floatAtIndex:(NSUInteger)index;
 //
@@ -58,7 +54,7 @@
 //
 //- (void)appendUniformWithColor:(Color *)value;
 
-- (void)restoreShaderSettingWithRenderEncoder:(id<MTLRenderCommandEncoder>) renderEncoder;
+
 
 @end
 

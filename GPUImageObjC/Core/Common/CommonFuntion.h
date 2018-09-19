@@ -8,6 +8,8 @@
 
 #define ABSTRACT_METHOD NSAssert(NO, @"Do something at subclass");
 
+
+
 #import <Foundation/Foundation.h>
 
 float *nsArray2FloatArray(NSArray *array);

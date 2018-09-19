@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9382E4592150DED600BB6814 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E4582150DED600BB6814 /* Camera.m */; };
+		9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */; };
+		9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E46421510DCA00BB6814 /* AppDelegate.m */; };
+		9382E46821510DCA00BB6814 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E46721510DCA00BB6814 /* ViewController.m */; };
+		9382E46B21510DCA00BB6814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9382E46921510DCA00BB6814 /* Main.storyboard */; };
+		9382E46D21510DDB00BB6814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9382E46C21510DDB00BB6814 /* Assets.xcassets */; };
+		9382E47021510DDB00BB6814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9382E46E21510DDB00BB6814 /* LaunchScreen.storyboard */; };
+		9382E47321510DDB00BB6814 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E47221510DDB00BB6814 /* main.m */; };
+		9382E4782151244100BB6814 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E4582150DED600BB6814 /* Camera.m */; };
+		9382E4792151244600BB6814 /* PhysicalCameraLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */; };
+		9382E47A2151245A00BB6814 /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A912149223E00B30E83 /* Texture.m */; };
+		9382E47B2151245C00BB6814 /* Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A932149225E00B30E83 /* Timestamp.m */; };
+		9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A86214921B100B30E83 /* ImageOrientation.m */; };
+		9382E47D2151246600BB6814 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A842149219600B30E83 /* CommonFuntion.m */; };
+		9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A962149226B00B30E83 /* ShaderUniformSettings.m */; };
+		9382E47F2151246C00BB6814 /* MetalRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A8C2149220400B30E83 /* MetalRendering.m */; };
+		9382E4802151246E00BB6814 /* MetalRenderingDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A892149220400B30E83 /* MetalRenderingDevice.m */; };
+		9382E4812151247700BB6814 /* Pipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A702149215800B30E83 /* Pipeline.m */; };
+		9382E4822151247A00BB6814 /* ImageConsumerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A712149215800B30E83 /* ImageConsumerProtocol.m */; };
+		9382E4832151247D00BB6814 /* ImageProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A772149215800B30E83 /* ImageProcessingOperation.m */; };
+		9382E4842151248200BB6814 /* ImageSourceProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A752149215800B30E83 /* ImageSourceProtocol.m */; };
+		9382E4852151248500BB6814 /* SourceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A792149215800B30E83 /* SourceContainer.m */; };
+		9382E4862151248700BB6814 /* TargetContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A782149215800B30E83 /* TargetContainer.m */; };
+		9382E4872151248A00BB6814 /* WeakImageConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A742149215800B30E83 /* WeakImageConsumer.m */; };
+		9382E4882151248E00BB6814 /* BasicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA8214923FC00B30E83 /* BasicOperation.m */; };
+		9382E4892151249200BB6814 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA9214923FC00B30E83 /* Passthrough.metal */; };
+		9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */; };
 		93AD12DE214B476300F803F9 /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */; };
 		93AD12E1214B492F00F803F9 /* SaturationAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */; };
 		93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A5721491F9800B30E83 /* AppDelegate.m */; };
@@ -38,6 +65,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9382E4572150DED600BB6814 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		9382E4582150DED600BB6814 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		9382E45A2150E11600BB6814 /* PhysicalCameraLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicalCameraLocation.h; sourceTree = "<group>"; };
+		9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicalCameraLocation.m; sourceTree = "<group>"; };
+		9382E46121510DCA00BB6814 /* GPUImage4iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImage4iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9382E46321510DCA00BB6814 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9382E46421510DCA00BB6814 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9382E46621510DCA00BB6814 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9382E46721510DCA00BB6814 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9382E46A21510DCA00BB6814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9382E46C21510DDB00BB6814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9382E46F21510DDB00BB6814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9382E47121510DDB00BB6814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9382E47221510DDB00BB6814 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SaturationAdjustment.metal; sourceTree = "<group>"; };
 		93AD12DF214B492F00F803F9 /* SaturationAdjustment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaturationAdjustment.h; sourceTree = "<group>"; };
 		93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaturationAdjustment.m; sourceTree = "<group>"; };
@@ -94,6 +135,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9382E45E21510DCA00BB6814 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93B05A5021491F9800B30E83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9382E46221510DCA00BB6814 /* GPUImage4iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9382E46321510DCA00BB6814 /* AppDelegate.h */,
+				9382E46421510DCA00BB6814 /* AppDelegate.m */,
+				9382E46621510DCA00BB6814 /* ViewController.h */,
+				9382E46721510DCA00BB6814 /* ViewController.m */,
+				9382E46921510DCA00BB6814 /* Main.storyboard */,
+				9382E46C21510DDB00BB6814 /* Assets.xcassets */,
+				9382E46E21510DDB00BB6814 /* LaunchScreen.storyboard */,
+				9382E47121510DDB00BB6814 /* Info.plist */,
+				9382E47221510DDB00BB6814 /* main.m */,
+			);
+			path = GPUImage4iOS;
+			sourceTree = "<group>";
+		};
 		93AD12DC214B474A00F803F9 /* Color processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				93B05A5521491F9800B30E83 /* GPUImageObjC */,
+				9382E46221510DCA00BB6814 /* GPUImage4iOS */,
 				93B05A5421491F9800B30E83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				93B05A5321491F9800B30E83 /* GPUImageObjC.app */,
+				9382E46121510DCA00BB6814 /* GPUImage4iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +225,8 @@
 				93B05A912149223E00B30E83 /* Texture.m */,
 				93B05A942149225E00B30E83 /* Timestamp.h */,
 				93B05A932149225E00B30E83 /* Timestamp.m */,
+				93B05A87214921B100B30E83 /* ImageOrientation.h */,
+				93B05A86214921B100B30E83 /* ImageOrientation.m */,
 				93B05A822149218A00B30E83 /* Common */,
 				93B05A812149216C00B30E83 /* Rendering */,
 				93B05A6B21491FE600B30E83 /* Pipeline */,
@@ -169,14 +237,14 @@
 		93B05A6B21491FE600B30E83 /* Pipeline */ = {
 			isa = PBXGroup;
 			children = (
+				93B05A6F2149215800B30E83 /* Pipeline.h */,
+				93B05A702149215800B30E83 /* Pipeline.m */,
 				93B05A722149215800B30E83 /* ImageConsumerProtocol.h */,
 				93B05A712149215800B30E83 /* ImageConsumerProtocol.m */,
 				93B05A6E2149215800B30E83 /* ImageProcessingOperation.h */,
 				93B05A772149215800B30E83 /* ImageProcessingOperation.m */,
 				93B05A6C2149215700B30E83 /* ImageSourceProtocol.h */,
 				93B05A752149215800B30E83 /* ImageSourceProtocol.m */,
-				93B05A6F2149215800B30E83 /* Pipeline.h */,
-				93B05A702149215800B30E83 /* Pipeline.m */,
 				93B05A762149215800B30E83 /* SourceContainer.h */,
 				93B05A792149215800B30E83 /* SourceContainer.m */,
 				93B05A732149215800B30E83 /* TargetContainer.h */,
@@ -205,8 +273,6 @@
 			children = (
 				93B05A832149219600B30E83 /* CommonFuntion.h */,
 				93B05A842149219600B30E83 /* CommonFuntion.m */,
-				93B05A87214921B100B30E83 /* ImageOrientation.h */,
-				93B05A86214921B100B30E83 /* ImageOrientation.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -234,6 +300,10 @@
 		93B05A9B2149236500B30E83 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9382E4572150DED600BB6814 /* Camera.h */,
+				9382E4582150DED600BB6814 /* Camera.m */,
+				9382E45A2150E11600BB6814 /* PhysicalCameraLocation.h */,
+				9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -278,6 +348,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9382E46021510DCA00BB6814 /* GPUImage4iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9382E47421510DDB00BB6814 /* Build configuration list for PBXNativeTarget "GPUImage4iOS" */;
+			buildPhases = (
+				9382E45D21510DCA00BB6814 /* Sources */,
+				9382E45E21510DCA00BB6814 /* Frameworks */,
+				9382E45F21510DCA00BB6814 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GPUImage4iOS;
+			productName = GPUImage4iOS;
+			productReference = 9382E46121510DCA00BB6814 /* GPUImage4iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		93B05A5221491F9800B30E83 /* GPUImageObjC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93B05A6721491F9B00B30E83 /* Build configuration list for PBXNativeTarget "GPUImageObjC" */;
@@ -304,8 +391,16 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CPU11367;
 				TargetAttributes = {
+					9382E46021510DCA00BB6814 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					93B05A5221491F9800B30E83 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -323,11 +418,22 @@
 			projectRoot = "";
 			targets = (
 				93B05A5221491F9800B30E83 /* GPUImageObjC */,
+				9382E46021510DCA00BB6814 /* GPUImage4iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9382E45F21510DCA00BB6814 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9382E47021510DDB00BB6814 /* LaunchScreen.storyboard in Resources */,
+				9382E46D21510DDB00BB6814 /* Assets.xcassets in Resources */,
+				9382E46B21510DCA00BB6814 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93B05A5121491F9800B30E83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +447,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9382E45D21510DCA00BB6814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9382E47D2151246600BB6814 /* CommonFuntion.m in Sources */,
+				9382E4782151244100BB6814 /* Camera.m in Sources */,
+				9382E46821510DCA00BB6814 /* ViewController.m in Sources */,
+				9382E4832151247D00BB6814 /* ImageProcessingOperation.m in Sources */,
+				9382E47F2151246C00BB6814 /* MetalRendering.m in Sources */,
+				9382E4812151247700BB6814 /* Pipeline.m in Sources */,
+				9382E4842151248200BB6814 /* ImageSourceProtocol.m in Sources */,
+				9382E4892151249200BB6814 /* Passthrough.metal in Sources */,
+				9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */,
+				9382E47321510DDB00BB6814 /* main.m in Sources */,
+				9382E47B2151245C00BB6814 /* Timestamp.m in Sources */,
+				9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */,
+				9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */,
+				9382E47A2151245A00BB6814 /* Texture.m in Sources */,
+				9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */,
+				9382E4802151246E00BB6814 /* MetalRenderingDevice.m in Sources */,
+				9382E4882151248E00BB6814 /* BasicOperation.m in Sources */,
+				9382E4872151248A00BB6814 /* WeakImageConsumer.m in Sources */,
+				9382E4862151248700BB6814 /* TargetContainer.m in Sources */,
+				9382E4852151248500BB6814 /* SourceContainer.m in Sources */,
+				9382E4792151244600BB6814 /* PhysicalCameraLocation.m in Sources */,
+				9382E4822151247A00BB6814 /* ImageConsumerProtocol.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93B05A4F21491F9800B30E83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,7 +492,9 @@
 				93B05A88214921B100B30E83 /* ImageOrientation.m in Sources */,
 				93B05A8D2149220400B30E83 /* MetalRenderingDevice.m in Sources */,
 				93B05A7B2149215800B30E83 /* ImageConsumerProtocol.m in Sources */,
+				9382E4592150DED600BB6814 /* Camera.m in Sources */,
 				93B05A802149215800B30E83 /* SourceContainer.m in Sources */,
+				9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */,
 				93B05A952149225E00B30E83 /* Timestamp.m in Sources */,
 				93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */,
 				93B05A7F2149215800B30E83 /* TargetContainer.m in Sources */,
@@ -376,6 +513,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9382E46921510DCA00BB6814 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9382E46A21510DCA00BB6814 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9382E46E21510DDB00BB6814 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9382E46F21510DDB00BB6814 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		93B05A5E21491F9B00B30E83 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -387,6 +540,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9382E47521510DDB00BB6814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				INFOPLIST_FILE = GPUImage4iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loctp2.GPUImage4iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9382E47621510DDB00BB6814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				INFOPLIST_FILE = GPUImage4iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loctp2.GPUImage4iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		93B05A6521491F9B00B30E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -503,7 +697,7 @@
 				CODE_SIGN_ENTITLEMENTS = GPUImageObjC/GPUImageObjC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				DEVELOPMENT_TEAM = Q2J8JLH69D;
 				INFOPLIST_FILE = GPUImageObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,7 +715,7 @@
 				CODE_SIGN_ENTITLEMENTS = GPUImageObjC/GPUImageObjC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				DEVELOPMENT_TEAM = Q2J8JLH69D;
 				INFOPLIST_FILE = GPUImageObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,6 +729,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9382E47421510DDB00BB6814 /* Build configuration list for PBXNativeTarget "GPUImage4iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9382E47521510DDB00BB6814 /* Debug */,
+				9382E47621510DDB00BB6814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		93B05A4E21491F9800B30E83 /* Build configuration list for PBXProject "GPUImageObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
