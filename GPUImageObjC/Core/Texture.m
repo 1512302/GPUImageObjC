@@ -12,6 +12,27 @@
 
 #define kNumOfArray 8
 
+const float yLimit = 1.0;
+
+const float xLimit = 1.0;
+
+const float temp1[] = {0.0, yLimit, 0.0, 0.0, xLimit, yLimit, xLimit, 0.0};
+
+const float temp2[] = {xLimit, 0.0, xLimit, yLimit, 0.0, 0.0, 0.0, yLimit};
+
+const float temp3[] = {xLimit, yLimit, 0.0, yLimit, xLimit, 0.0, 0.0, 0.0};
+
+const float temp4[] = {xLimit, 0.0, 0.0, 0.0, xLimit, yLimit, 0.0, yLimit};
+
+const float temp5[] = {0.0, yLimit, xLimit, yLimit, 0.0, 0.0, xLimit, 0.0};
+
+const float temp6[] = {0.0, 0.0, 0.0, yLimit, xLimit, 0.0, xLimit, yLimit};
+
+const float temp7[] = {xLimit, yLimit, xLimit, 0.0, 0.0, yLimit, 0.0, 0.0};
+
+const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit};
+
+
 @implementation Texture
 
 - (void)commonInit {
@@ -42,6 +63,9 @@
     return self;
 }
 
+
+
+
 - (void)textureCoodinatesForOutputOrientation:(ImageOrientation)outputOrientation normalized:(boolean_t)normalized completion:(void(^)(float *vertexs, int size))completion {
     Rotation inputRotation = rotation(self.orientation, outputOrientation);
     
@@ -49,7 +73,7 @@
     float yLimit = 1.0;
     
     float *result;
-    int size;
+    int size = 8;
     if (!normalized) {
         xLimit = self.texture.width;
         yLimit = self.texture.height;
@@ -57,55 +81,47 @@
     
     switch (inputRotation) {
         case RotationCounterclockwise: {
-            float temp[] = {0.0, yLimit, 0.0, 0.0, xLimit, yLimit, xLimit, 0.0};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
-            
+            result = (float *)temp1;
+            break;
         }
         case RotationClockwise: {
-            float temp[] = {xLimit, 0.0, xLimit, yLimit, 0.0, 0.0, 0.0, yLimit};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp2;
+            break;
         }
-            
         case Rotation180: {
-            float temp[] = {xLimit, yLimit, 0.0, yLimit, xLimit, 0.0, 0.0, 0.0};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp3;
+            break;
         }
             
         case RotationFlipHorizontally: {
-            float temp[] = {xLimit, 0.0, 0.0, 0.0, xLimit, yLimit, 0.0, yLimit};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp4;
+            break;
         }
             
         case RotationFlipVertically: {
-            float temp[] = {0.0, yLimit, xLimit, yLimit, 0.0, 0.0, xLimit, 0.0};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp5;
+            break;
         }
         
         case RotationClockwiseAndFlipVertically: {
-            float temp[] = {0.0, 0.0, 0.0, yLimit, xLimit, 0.0, xLimit, yLimit};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp6;
+            break;
         }
             
         case RotationClockwiseAndFlipHorizontally: {
-            float temp[] = {xLimit, yLimit, xLimit, 0.0, 0.0, yLimit, 0.0, 0.0};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp7;
+            break;
         }
             
         case RotationNone:
         default: {
-            float temp[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit};
-            size = sizeof(temp) / sizeof(float);
-            result = newFloatArray(temp, size);
+            result = (float *)temp8;
+            break;
         }
     }
-    completion(result, size);
+    if (completion) {
+        completion(result, size);
+    }
 }
 
 @end

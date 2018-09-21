@@ -41,7 +41,6 @@
     [_image processImage];
 }
 
-
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 

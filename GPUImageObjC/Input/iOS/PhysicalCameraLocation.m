@@ -35,12 +35,12 @@
 }
 
 - (AVCaptureDevice *)device {
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for (AVCaptureDevice *device in devices) {
-        if (device.position == [self captureDevicePosition]) {
-            return device;
-        }
-    }
+//    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+//    for (AVCaptureDevice *device in devices) {
+//        if (device.position == [self captureDevicePosition]) {
+//            return device;
+//        }
+//    }
     return [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 }
 

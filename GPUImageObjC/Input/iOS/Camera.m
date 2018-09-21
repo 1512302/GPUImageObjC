@@ -25,7 +25,7 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
         _targets = [TargetContainer new];
         
         _frameRenderingSemaphore = dispatch_semaphore_create(1);
-        _cameraProcessingQueue = dispatch_get_main_queue();
+        _cameraProcessingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         _cameraFrameProcessingQueue = dispatch_queue_create("com.loctp2.GPUImage.cameraFrameProcessingQueue", DISPATCH_QUEUE_SERIAL);
         
         _location = [PhysicalCameraLocation new];
@@ -56,7 +56,7 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
         if (cameraDevice) {
             _inputCamera = cameraDevice;
         } else {
-            AVCaptureDevice *device = [location device];
+            AVCaptureDevice *device = [_location device];
             if (device) {
                 _inputCamera = device;
             } else {
@@ -87,6 +87,8 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
         [_captureSesstion commitConfiguration];
         
         CVMetalTextureCacheCreate(kCFAllocatorDefault, nil, [MetalRenderingDevice shared].device, nil, &_videoTextureCache);
+        
+        [_videoOutput setSampleBufferDelegate:self queue:_cameraProcessingQueue];
     }
     return self;
 }
@@ -116,32 +118,30 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
     }
 }
 
-- (void)captureOutput:(AVCaptureOutput *)output didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    dispatch_semaphore_wait(_frameRenderingSemaphore, DISPATCH_TIME_NOW);
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    if (dispatch_semaphore_wait(_frameRenderingSemaphore, DISPATCH_TIME_NOW) > 0) {
+        return;
+    }
+    CFRetain(sampleBuffer);
     
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
-    
     CVPixelBufferRef cameraFrame = CMSampleBufferGetImageBuffer(sampleBuffer);
     size_t bufferWidth = CVPixelBufferGetWidth(cameraFrame);
     size_t bufferHeight = CVPixelBufferGetHeight(cameraFrame);
     
-    CVPixelBufferLockFlags lockFlags = 0;
-    
-    CVPixelBufferLockBaseAddress(cameraFrame, lockFlags);
-    
     __weak __typeof(self) weakSelf = self;
     dispatch_async(_cameraFrameProcessingQueue, ^{
         [weakSelf.delegate didCaptureBuffer:sampleBuffer];
-        CVPixelBufferUnlockBaseAddress(cameraFrame, lockFlags);
         
-        CVMetalTextureRef textureRef;
+        CVMetalTextureRef textureRef = nil;
         CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, weakSelf.videoTextureCache, cameraFrame, nil, MTLPixelFormatBGRA8Unorm, bufferWidth, bufferHeight, 0, &textureRef);
+        CFRelease(sampleBuffer);
         
-        CVMetalTextureRef concreteTexture = textureRef;
-        if (concreteTexture) {
-            id<MTLTexture>cameraTexture = CVMetalTextureGetTexture(concreteTexture);
+        if (textureRef) {
+            id<MTLTexture>cameraTexture = CVMetalTextureGetTexture(textureRef);
             Texture *texture = [[Texture alloc] initWithOrientation:[weakSelf.location imageOrientation] texture:cameraTexture];
             [weakSelf updateTargetsWithTexture:texture];
+            CVBufferRelease(textureRef);
         }
         
         if (weakSelf.runBenchmark) {
@@ -165,10 +165,17 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
             weakSelf.framesSinceLastCheck++;
         }
         
+        
+        //CVPixelBufferUnlockBaseAddress(cameraFrame, lockFlags);
+        
         dispatch_semaphore_signal(weakSelf.frameRenderingSemaphore);
     });
-    
-    
+}
+
+- (void)captureOutput:(AVCaptureOutput *)output didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    NSLog(@"loctp2: %@", sampleBuffer);
+    //exit(0);
+
 }
 
 - (void)transmitPreviousImageToTarget:(id<ImageConsumer>)target atIndex:(NSUInteger)index {

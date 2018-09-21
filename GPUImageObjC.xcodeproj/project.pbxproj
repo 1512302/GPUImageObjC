@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		937AB4522152638D00DB67B0 /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 937AB4512152632400DB67B0 /* RenderView.m */; };
 		9382E4592150DED600BB6814 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E4582150DED600BB6814 /* Camera.m */; };
 		9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */; };
 		9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E46421510DCA00BB6814 /* AppDelegate.m */; };
@@ -34,6 +35,9 @@
 		9382E4882151248E00BB6814 /* BasicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA8214923FC00B30E83 /* BasicOperation.m */; };
 		9382E4892151249200BB6814 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA9214923FC00B30E83 /* Passthrough.metal */; };
 		9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */; };
+		93A6B9622153A4F100600991 /* SaturationAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */; };
+		93A6B9632153A4F300600991 /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */; };
+		93A6B97121549C4F00600991 /* Benmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B97021549C4F00600991 /* Benmark.m */; };
 		93AD12DE214B476300F803F9 /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */; };
 		93AD12E1214B492F00F803F9 /* SaturationAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */; };
 		93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A5721491F9800B30E83 /* AppDelegate.m */; };
@@ -65,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		937AB4512152632400DB67B0 /* RenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenderView.m; sourceTree = "<group>"; };
 		9382E4572150DED600BB6814 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		9382E4582150DED600BB6814 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		9382E45A2150E11600BB6814 /* PhysicalCameraLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicalCameraLocation.h; sourceTree = "<group>"; };
@@ -79,6 +84,8 @@
 		9382E46F21510DDB00BB6814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9382E47121510DDB00BB6814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9382E47221510DDB00BB6814 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93A6B96F21549C4F00600991 /* Benmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Benmark.h; sourceTree = "<group>"; };
+		93A6B97021549C4F00600991 /* Benmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Benmark.m; sourceTree = "<group>"; };
 		93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SaturationAdjustment.metal; sourceTree = "<group>"; };
 		93AD12DF214B492F00F803F9 /* SaturationAdjustment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaturationAdjustment.h; sourceTree = "<group>"; };
 		93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaturationAdjustment.m; sourceTree = "<group>"; };
@@ -273,6 +280,8 @@
 			children = (
 				93B05A832149219600B30E83 /* CommonFuntion.h */,
 				93B05A842149219600B30E83 /* CommonFuntion.m */,
+				93A6B96F21549C4F00600991 /* Benmark.h */,
+				93A6B97021549C4F00600991 /* Benmark.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -292,7 +301,6 @@
 				93B05AA02149237200B30E83 /* iOS */,
 				93B05AA12149237200B30E83 /* Mac */,
 				93B05AA22149237200B30E83 /* RenderView.h */,
-				93B05AA32149237200B30E83 /* RenderView.m */,
 			);
 			path = Output;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 		93B05AA02149237200B30E83 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				937AB4512152632400DB67B0 /* RenderView.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 		93B05AA12149237200B30E83 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				93B05AA32149237200B30E83 /* RenderView.m */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -461,6 +471,8 @@
 				9382E4892151249200BB6814 /* Passthrough.metal in Sources */,
 				9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */,
 				9382E47321510DDB00BB6814 /* main.m in Sources */,
+				93A6B9632153A4F300600991 /* SaturationAdjustment.metal in Sources */,
+				93A6B9622153A4F100600991 /* SaturationAdjustment.m in Sources */,
 				9382E47B2151245C00BB6814 /* Timestamp.m in Sources */,
 				9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */,
 				9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */,
@@ -473,6 +485,7 @@
 				9382E4852151248500BB6814 /* SourceContainer.m in Sources */,
 				9382E4792151244600BB6814 /* PhysicalCameraLocation.m in Sources */,
 				9382E4822151247A00BB6814 /* ImageConsumerProtocol.m in Sources */,
+				937AB4522152638D00DB67B0 /* RenderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A6B97121549C4F00600991 /* Benmark.m in Sources */,
 				93B05A8E2149220400B30E83 /* MetalRendering.m in Sources */,
 				93B05A7D2149215800B30E83 /* ImageSourceProtocol.m in Sources */,
 				93B05A982149226B00B30E83 /* ShaderUniformSettings.m in Sources */,
@@ -546,14 +560,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				DEVELOPMENT_TEAM = Q2J8JLH69D;
 				INFOPLIST_FILE = GPUImage4iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.loctp2.GPUImage4iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lock15.GPUImage4iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -566,14 +580,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36B6SWNZ97;
+				DEVELOPMENT_TEAM = Q2J8JLH69D;
 				INFOPLIST_FILE = GPUImage4iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.loctp2.GPUImage4iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lock15.GPUImage4iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -60,6 +60,7 @@
         Texture *firstInputTexture = _inputTextures[@(0)];
         if (firstInputTexture) {
             Rotation rotationNeeded = rotation(firstInputTexture.orientation, ImageOrientationPortrait);
+            
             if (flipsDimensions(rotationNeeded)) {
                 outputWidth = (int32_t)firstInputTexture.texture.height;
                 outputHeight = (int32_t)firstInputTexture.texture.width;

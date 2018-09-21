@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MetalKit/MetalKit.h>
 #import "Pipeline.h"
+#import "ImageOrientation.h"
 
 
 @interface RenderView : MTKView <ImageConsumer>
@@ -20,6 +21,8 @@
 @property (nonatomic, readonly, strong) Texture *currentTexture; // nil
 
 @property (nonatomic, readonly, strong) id<MTLRenderPipelineState> renderPipelineState; //nil
+
+@property (nonatomic, readwrite) ImageOrientation orientation;
 
 // Override MTKView
 - (instancetype)initWithCoder:(NSCoder *)coder;

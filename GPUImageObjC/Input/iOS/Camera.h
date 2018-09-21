@@ -57,6 +57,8 @@
 
 @property (nonatomic, readwrite) CFAbsoluteTime lastCheckTime;
 
+
+
 - (instancetype)init;
 
 - (instancetype)initWithSessionPreset:(AVCaptureSessionPreset)sessionPreset
@@ -67,9 +69,6 @@
 - (void)startCapture;
 
 - (void)stopCapture;
-
-// Delegate
-- (void)captureOutput:(AVCaptureOutput *)output didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
 
 // Overide
 - (void)transmitPreviousImageToTarget:(id<ImageConsumer>)target atIndex:(NSUInteger)index;

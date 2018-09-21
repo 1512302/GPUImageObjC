@@ -11,7 +11,9 @@
 #import "ShaderUniformSettings.h"
 #import "CommonFuntion.h"
 
-float standardImageVertices[] = {-1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0};
+float standardImageVertices[] = {-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0};
+
+//float standardImageVertices[] = {-1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, -1.0};
 
 void renderQuad(id<MTLCommandBuffer> commandBuffer,
                 id<MTLRenderPipelineState> pipelineState,
@@ -33,7 +35,7 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
     // Clear view
     MTLRenderPassDescriptor *renderPass = [MTLRenderPassDescriptor new];
     renderPass.colorAttachments[0].texture = outputTexture.texture;
-    renderPass.colorAttachments[0].clearColor = MTLClearColorMake(0, 1, 1, 1);
+    renderPass.colorAttachments[0].clearColor = MTLClearColorMake(0, 0, 0, 1);
     renderPass.colorAttachments[0].storeAction = MTLStoreActionStore;
     renderPass.colorAttachments[0].loadAction = MTLLoadActionClear;
     
@@ -55,11 +57,9 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
                 id<MTLBuffer> textureBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:vertexs length:sizeof(float) * size options:MTLResourceOptionCPUCacheModeDefault];
                 textureBuffer.label = @"Texture Coordinates";
                 
-                
                 [renderEncoder setVertexBuffer:textureBuffer offset:0 atIndex: 1 + textureIndex];
                 [renderEncoder setFragmentTexture:currentTexture.texture atIndex:textureIndex];
                 
-                free(vertexs);
             }
         }];
     }
