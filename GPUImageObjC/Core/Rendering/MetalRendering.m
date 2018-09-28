@@ -11,7 +11,7 @@
 #import "ShaderUniformSettings.h"
 #import "CommonFuntion.h"
 
-float standardImageVertices[] = {-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0};
+float standardImageVertices[] = {-1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0};
 
 //float standardImageVertices[] = {-1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, -1.0};
 
@@ -28,6 +28,8 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
     if (!imageVertices) {
         imageVertices = standardImageVertices;
         imageVerticesSize = sizeof(standardImageVertices);
+    } else {
+        NSLog(@"Customize");
     }
     id<MTLBuffer> vertexBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:imageVertices length:imageVerticesSize options:MTLResourceOptionCPUCacheModeDefault];
     vertexBuffer.label = @"Vertices";
@@ -77,7 +79,7 @@ void renderQuadDefault(id<MTLCommandBuffer> commandBuffer,
                        id<MTLRenderPipelineState> pipelineState,
                        NSDictionary<NSNumber *, Texture *> *inputTextures,
                        Texture *outputTexture) {
-    renderQuad(commandBuffer, pipelineState, nil, inputTextures, true, standardImageVertices, sizeof(standardImageVertices), outputTexture, ImageOrientationPortrait);
+    renderQuad(commandBuffer, pipelineState, nil, inputTextures, true, nil, 0, outputTexture, ImageOrientationPortrait);
 }
 
 id<MTLRenderPipelineState> generateRenderPipelineState(MetalRenderingDevice *device, NSString *vertexFunctionName, NSString *fragmentFunctionName, NSString *operationName) {

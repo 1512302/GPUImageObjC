@@ -30,8 +30,10 @@ const float temp6[] = {0.0, 0.0, 0.0, yLimit, xLimit, 0.0, xLimit, yLimit};
 
 const float temp7[] = {xLimit, yLimit, xLimit, 0.0, 0.0, yLimit, 0.0, 0.0};
 
-const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit};
+const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit}; //potrait
 
+
+/// {-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0};
 
 @implementation Texture
 

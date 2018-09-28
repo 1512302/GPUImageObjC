@@ -35,9 +35,14 @@
 		9382E4882151248E00BB6814 /* BasicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA8214923FC00B30E83 /* BasicOperation.m */; };
 		9382E4892151249200BB6814 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AA9214923FC00B30E83 /* Passthrough.metal */; };
 		9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */; };
+		938F1364215E0FBE00B35850 /* SampleConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 938F1363215E0FBE00B35850 /* SampleConfiguration.plist */; };
+		938F1365215E0FBE00B35850 /* SampleConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 938F1363215E0FBE00B35850 /* SampleConfiguration.plist */; };
 		93A6B9622153A4F100600991 /* SaturationAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */; };
 		93A6B9632153A4F300600991 /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */; };
 		93A6B97121549C4F00600991 /* Benmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B97021549C4F00600991 /* Benmark.m */; };
+		93A6B976215C94BF00600991 /* ColorInversion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B975215C94BE00600991 /* ColorInversion.metal */; };
+		93A6B979215C94E900600991 /* ColorInversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B978215C94E900600991 /* ColorInversion.m */; };
+		93A6B97F215CB01600600991 /* ColorInversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B978215C94E900600991 /* ColorInversion.m */; };
 		93AD12DE214B476300F803F9 /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */; };
 		93AD12E1214B492F00F803F9 /* SaturationAdjustment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */; };
 		93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A5721491F9800B30E83 /* AppDelegate.m */; };
@@ -66,6 +71,14 @@
 		93B05AAD21492D2A00B30E83 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AAC21492D2A00B30E83 /* Shaders.metal */; };
 		93B05AAF2149301200B30E83 /* Lambeau.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93B05AAE2149301200B30E83 /* Lambeau.jpg */; };
 		93B05AB3214A10C900B30E83 /* BlendShaderTypes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */; };
+		93BB82D3215CB33F00955C08 /* ColorInversion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93A6B975215C94BE00600991 /* ColorInversion.metal */; };
+		93BB82D4215CB39400955C08 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93B05AAC21492D2A00B30E83 /* Shaders.metal */; };
+		93C75C80215CD5C00024565D /* Luminance.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C7F215CD5C00024565D /* Luminance.metal */; };
+		93C75C81215CD5C00024565D /* Luminance.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C7F215CD5C00024565D /* Luminance.metal */; };
+		93C75C84215CD66B0024565D /* Luminance.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C83215CD66B0024565D /* Luminance.m */; };
+		93C75C85215CD66B0024565D /* Luminance.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C83215CD66B0024565D /* Luminance.m */; };
+		93C75C8A215CF27F0024565D /* FilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C89215CF27F0024565D /* FilterPipeline.m */; };
+		93C75C8B215CF27F0024565D /* FilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C89215CF27F0024565D /* FilterPipeline.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +97,12 @@
 		9382E46F21510DDB00BB6814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9382E47121510DDB00BB6814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9382E47221510DDB00BB6814 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		938F1363215E0FBE00B35850 /* SampleConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleConfiguration.plist; sourceTree = "<group>"; };
 		93A6B96F21549C4F00600991 /* Benmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Benmark.h; sourceTree = "<group>"; };
 		93A6B97021549C4F00600991 /* Benmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Benmark.m; sourceTree = "<group>"; };
+		93A6B975215C94BE00600991 /* ColorInversion.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorInversion.metal; sourceTree = "<group>"; };
+		93A6B977215C94E900600991 /* ColorInversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorInversion.h; sourceTree = "<group>"; };
+		93A6B978215C94E900600991 /* ColorInversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorInversion.m; sourceTree = "<group>"; };
 		93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SaturationAdjustment.metal; sourceTree = "<group>"; };
 		93AD12DF214B492F00F803F9 /* SaturationAdjustment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaturationAdjustment.h; sourceTree = "<group>"; };
 		93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaturationAdjustment.m; sourceTree = "<group>"; };
@@ -139,6 +156,12 @@
 		93B05AAE2149301200B30E83 /* Lambeau.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lambeau.jpg; sourceTree = "<group>"; };
 		93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = BlendShaderTypes.metal; sourceTree = "<group>"; };
 		93B05AB2214A10C900B30E83 /* BlendShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendShaderTypes.h; sourceTree = "<group>"; };
+		93C75C7F215CD5C00024565D /* Luminance.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Luminance.metal; sourceTree = "<group>"; };
+		93C75C82215CD66B0024565D /* Luminance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Luminance.h; sourceTree = "<group>"; };
+		93C75C83215CD66B0024565D /* Luminance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Luminance.m; sourceTree = "<group>"; };
+		93C75C86215CD7920024565D /* Filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		93C75C88215CF27F0024565D /* FilterPipeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterPipeline.h; sourceTree = "<group>"; };
+		93C75C89215CF27F0024565D /* FilterPipeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterPipeline.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +185,7 @@
 		9382E46221510DCA00BB6814 /* GPUImage4iOS */ = {
 			isa = PBXGroup;
 			children = (
+				938F1363215E0FBE00B35850 /* SampleConfiguration.plist */,
 				9382E46321510DCA00BB6814 /* AppDelegate.h */,
 				9382E46421510DCA00BB6814 /* AppDelegate.m */,
 				9382E46621510DCA00BB6814 /* ViewController.h */,
@@ -178,6 +202,12 @@
 		93AD12DC214B474A00F803F9 /* Color processing */ = {
 			isa = PBXGroup;
 			children = (
+				93C75C7F215CD5C00024565D /* Luminance.metal */,
+				93C75C82215CD66B0024565D /* Luminance.h */,
+				93C75C83215CD66B0024565D /* Luminance.m */,
+				93A6B975215C94BE00600991 /* ColorInversion.metal */,
+				93A6B977215C94E900600991 /* ColorInversion.h */,
+				93A6B978215C94E900600991 /* ColorInversion.m */,
 				93AD12DD214B476300F803F9 /* SaturationAdjustment.metal */,
 				93AD12DF214B492F00F803F9 /* SaturationAdjustment.h */,
 				93AD12E0214B492F00F803F9 /* SaturationAdjustment.m */,
@@ -206,21 +236,21 @@
 		93B05A5521491F9800B30E83 /* GPUImageObjC */ = {
 			isa = PBXGroup;
 			children = (
-				93B05AA5214923CD00B30E83 /* Filter */,
-				93B05A9A2149232A00B30E83 /* Output */,
-				93B05A992149232100B30E83 /* Input */,
-				93B05A6A21491FC600B30E83 /* Core */,
+				93B05AAC21492D2A00B30E83 /* Shaders.metal */,
 				93B05A5621491F9800B30E83 /* AppDelegate.h */,
 				93B05A5721491F9800B30E83 /* AppDelegate.m */,
 				93B05A5921491F9800B30E83 /* ViewController.h */,
 				93B05A5A21491F9800B30E83 /* ViewController.m */,
-				93B05AAC21492D2A00B30E83 /* Shaders.metal */,
 				93B05AAE2149301200B30E83 /* Lambeau.jpg */,
 				93B05A5C21491F9B00B30E83 /* Assets.xcassets */,
 				93B05A5E21491F9B00B30E83 /* Main.storyboard */,
 				93B05A6121491F9B00B30E83 /* Info.plist */,
 				93B05A6221491F9B00B30E83 /* main.m */,
 				93B05A6421491F9B00B30E83 /* GPUImageObjC.entitlements */,
+				93B05AA5214923CD00B30E83 /* Filter */,
+				93B05A9A2149232A00B30E83 /* Output */,
+				93B05A992149232100B30E83 /* Input */,
+				93B05A6A21491FC600B30E83 /* Core */,
 			);
 			path = GPUImageObjC;
 			sourceTree = "<group>";
@@ -344,6 +374,8 @@
 		93B05AA5214923CD00B30E83 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				93C75C86215CD7920024565D /* Filter.h */,
+				93C75C87215CF1540024565D /* Pipeline */,
 				93AD12DC214B474A00F803F9 /* Color processing */,
 				93B05AA6214923FC00B30E83 /* BasicOperation.h */,
 				93B05AA8214923FC00B30E83 /* BasicOperation.m */,
@@ -353,6 +385,15 @@
 				93B05AB1214A10C800B30E83 /* BlendShaderTypes.metal */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		93C75C87215CF1540024565D /* Pipeline */ = {
+			isa = PBXGroup;
+			children = (
+				93C75C88215CF27F0024565D /* FilterPipeline.h */,
+				93C75C89215CF27F0024565D /* FilterPipeline.m */,
+			);
+			path = Pipeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9382E47021510DDB00BB6814 /* LaunchScreen.storyboard in Resources */,
+				938F1365215E0FBE00B35850 /* SampleConfiguration.plist in Resources */,
 				9382E46D21510DDB00BB6814 /* Assets.xcassets in Resources */,
 				9382E46B21510DCA00BB6814 /* Main.storyboard in Resources */,
 			);
@@ -449,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B05AAF2149301200B30E83 /* Lambeau.jpg in Resources */,
+				938F1364215E0FBE00B35850 /* SampleConfiguration.plist in Resources */,
 				93B05A5D21491F9B00B30E83 /* Assets.xcassets in Resources */,
 				93B05A6021491F9B00B30E83 /* Main.storyboard in Resources */,
 			);
@@ -467,12 +510,15 @@
 				9382E4832151247D00BB6814 /* ImageProcessingOperation.m in Sources */,
 				9382E47F2151246C00BB6814 /* MetalRendering.m in Sources */,
 				9382E4812151247700BB6814 /* Pipeline.m in Sources */,
+				93C75C81215CD5C00024565D /* Luminance.metal in Sources */,
 				9382E4842151248200BB6814 /* ImageSourceProtocol.m in Sources */,
 				9382E4892151249200BB6814 /* Passthrough.metal in Sources */,
+				93BB82D4215CB39400955C08 /* Shaders.metal in Sources */,
 				9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */,
 				9382E47321510DDB00BB6814 /* main.m in Sources */,
 				93A6B9632153A4F300600991 /* SaturationAdjustment.metal in Sources */,
 				93A6B9622153A4F100600991 /* SaturationAdjustment.m in Sources */,
+				93C75C85215CD66B0024565D /* Luminance.m in Sources */,
 				9382E47B2151245C00BB6814 /* Timestamp.m in Sources */,
 				9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */,
 				9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */,
@@ -480,12 +526,15 @@
 				9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */,
 				9382E4802151246E00BB6814 /* MetalRenderingDevice.m in Sources */,
 				9382E4882151248E00BB6814 /* BasicOperation.m in Sources */,
+				93C75C8B215CF27F0024565D /* FilterPipeline.m in Sources */,
 				9382E4872151248A00BB6814 /* WeakImageConsumer.m in Sources */,
 				9382E4862151248700BB6814 /* TargetContainer.m in Sources */,
 				9382E4852151248500BB6814 /* SourceContainer.m in Sources */,
 				9382E4792151244600BB6814 /* PhysicalCameraLocation.m in Sources */,
+				93BB82D3215CB33F00955C08 /* ColorInversion.metal in Sources */,
 				9382E4822151247A00BB6814 /* ImageConsumerProtocol.m in Sources */,
 				937AB4522152638D00DB67B0 /* RenderView.m in Sources */,
+				93A6B97F215CB01600600991 /* ColorInversion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,14 +544,17 @@
 			files = (
 				93A6B97121549C4F00600991 /* Benmark.m in Sources */,
 				93B05A8E2149220400B30E83 /* MetalRendering.m in Sources */,
+				93C75C84215CD66B0024565D /* Luminance.m in Sources */,
 				93B05A7D2149215800B30E83 /* ImageSourceProtocol.m in Sources */,
 				93B05A982149226B00B30E83 /* ShaderUniformSettings.m in Sources */,
 				93B05A5B21491F9800B30E83 /* ViewController.m in Sources */,
+				93A6B979215C94E900600991 /* ColorInversion.m in Sources */,
 				93B05A922149223E00B30E83 /* Texture.m in Sources */,
 				93B05A852149219600B30E83 /* CommonFuntion.m in Sources */,
 				93B05A6321491F9B00B30E83 /* main.m in Sources */,
 				93B05AAB214923FC00B30E83 /* Passthrough.metal in Sources */,
 				93B05AAD21492D2A00B30E83 /* Shaders.metal in Sources */,
+				93A6B976215C94BF00600991 /* ColorInversion.metal in Sources */,
 				93B05A88214921B100B30E83 /* ImageOrientation.m in Sources */,
 				93B05A8D2149220400B30E83 /* MetalRenderingDevice.m in Sources */,
 				93B05A7B2149215800B30E83 /* ImageConsumerProtocol.m in Sources */,
@@ -510,6 +562,7 @@
 				93B05A802149215800B30E83 /* SourceContainer.m in Sources */,
 				9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */,
 				93B05A952149225E00B30E83 /* Timestamp.m in Sources */,
+				93C75C80215CD5C00024565D /* Luminance.metal in Sources */,
 				93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */,
 				93B05A7F2149215800B30E83 /* TargetContainer.m in Sources */,
 				93B05AAA214923FC00B30E83 /* BasicOperation.m in Sources */,
@@ -518,6 +571,7 @@
 				93B05A7C2149215800B30E83 /* WeakImageConsumer.m in Sources */,
 				93AD12DE214B476300F803F9 /* SaturationAdjustment.metal in Sources */,
 				93AD12E1214B492F00F803F9 /* SaturationAdjustment.m in Sources */,
+				93C75C8A215CF27F0024565D /* FilterPipeline.m in Sources */,
 				93B05AB3214A10C900B30E83 /* BlendShaderTypes.metal in Sources */,
 				93B05A9F2149236500B30E83 /* PictureInput.m in Sources */,
 				93B05AA42149237200B30E83 /* RenderView.m in Sources */,

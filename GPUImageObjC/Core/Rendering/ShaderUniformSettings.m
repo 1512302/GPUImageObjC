@@ -27,7 +27,7 @@
     self = [self init];
     if (self) {
         _length = length;
-        _uniformValue = calloc(length, sizeof(float));
+        _uniformValue = malloc(length * sizeof(float));
     }
     return self;
 }

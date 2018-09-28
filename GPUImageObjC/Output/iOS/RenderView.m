@@ -106,9 +106,9 @@
         id<MTLCommandBuffer> commandBuffer = [[MetalRenderingDevice shared].commandQueue commandBuffer];
         Texture *outputTexture = [[Texture alloc] initWithOrientation:ImageOrientationPortrait texture:currentDrawable.texture];
         
-        //renderQuadDefault(commandBuffer, _renderPipelineState, @{@(0): imageTexture}, outputTexture);
-        [self scaleView];
-        renderQuad(commandBuffer, _renderPipelineState, nil,  @{@(0): imageTexture}, true, _imageVertex, _imageVertexSize, outputTexture, ImageOrientationPortrait);
+        renderQuadDefault(commandBuffer, _renderPipelineState, @{@(0): imageTexture}, outputTexture);
+//        [self scaleView];
+//        renderQuad(commandBuffer, _renderPipelineState, nil,  @{@(0): imageTexture}, true, _imageVertex, _imageVertexSize, outputTexture, ImageOrientationPortrait);
     
         
         if (commandBuffer) {
