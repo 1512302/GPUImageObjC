@@ -6,17 +6,70 @@
     <array>
         <dict>
             <key>FilterName</key>
-            <string>ColorInversion</string>
+            <string>CustomFilter</string>
+            <key>Property</key>
+            <dict>
+                <key>VertexFunctionName</key>
+                <string>oneInputVertex</string>
+                <key>FragmentFunctionName</key>
+                <string>colorInversionFragment</string>
+                <key>NumberOfInputs</key>
+                <string>1</string>
+                <key>FilterName</key>
+                <string>LocFilter</string>
+            </dict>
         </dict>
         <dict>
             <key>FilterName</key>
-            <string>SaturationAdjustment</string>
+            <string>CustomFilter</string>
+            <key>Property</key>
+            <dict>
+                <key>VertexFunctionName</key>
+                <string>oneInputVertex</string>
+                <key>FragmentFunctionName</key>
+                <string>saturationFragment</string>
+                <key>NumberOfInputs</key>
+                <string>1</string>
+                <key>FilterName</key>
+                <string>InversionFilter</string>
+            </dict>
             <key>Attributes</key>
             <dict>
-                <key>setSaturation:</key>
-                <string>float(1.0)</string>
+                <key>setSizeOfAttribute:</key>
+                <string>NSInteger(1)</string>
+                <key>setUniformValue:atIndex:</key>
+                <array>
+                    <string>float(3.0)</string>
+                    <string>NSInteger(0)</string>
+                </array>
             </dict>
         </dict>
+        
+<!--        <dict>-->
+<!--            <key>FilterName</key>-->
+<!--            <string>CustomFilter</string>-->
+<!--            <key>Property</key>-->
+<!--            <dict>-->
+<!--                <key>VertexFunctionName</key>-->
+<!--                <string>oneInputVertex</string>-->
+<!--                <key>FragmentFunctionName</key>-->
+<!--                <string>luminanceFragment</string>-->
+<!--                <key>NumberOfInputs</key>-->
+<!--                <string>1</string>-->
+<!--                <key>FilterName</key>-->
+<!--                <string>LocFilter</string>-->
+<!--            </dict>-->
+<!--        </dict>-->
+
+<!--        <dict>-->
+<!--            <key>FilterName</key>-->
+<!--            <string>LookupFilter</string>-->
+<!--            <key>Attributes</key>-->
+<!--            <dict>-->
+<!--                <key>setLookupImageWithURL:</key>-->
+<!--                <string>string("dd")</string>-->
+<!--            </dict>-->
+<!--        </dict>-->
     </array>
 </dict>
 </plist>

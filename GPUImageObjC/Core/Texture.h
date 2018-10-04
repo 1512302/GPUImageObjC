@@ -38,4 +38,6 @@ Timestamp *timestamp(TextureTimingStyle style);
 
 - (void)textureCoodinatesForOutputOrientation:(ImageOrientation)outputOrientation normalized:(boolean_t)normalized completion:(void(^)(float *vertexs, int size))completion;
 
+- (float *)textureCoodinatesForOutputOrientation:(ImageOrientation)outputOrientation;
+
 @end

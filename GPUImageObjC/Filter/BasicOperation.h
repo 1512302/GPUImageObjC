@@ -41,6 +41,9 @@ NSString *defaultVertexFunctionNameForInputs(NSUInteger inputCount);
                            numberOfInputs:(NSUInteger)numberOfInputs
                             operationName:(NSString *)operationName;
 
+- (void)setSizeOfAttribute:(NSUInteger)size;
+
+- (void)setUniformValue:(float)value atIndex:(NSUInteger)index;
 
 // Will be implementation for superclass
 - (void)transmitPreviousImageToTarget:(id<ImageConsumer>)target atIndex:(NSUInteger)index;

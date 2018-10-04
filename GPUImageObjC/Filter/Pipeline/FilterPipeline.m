@@ -7,6 +7,7 @@
 //
 
 #import "FilterPipeline.h"
+#import "BasicOperation.h"
 
 @import UIKit;
 
@@ -45,7 +46,7 @@
     }
     
     NSError *regexError = nil;
-    NSRegularExpression *parsingRegex = [NSRegularExpression regularExpressionWithPattern:@"(float|CGPoint|NSString)\\((.*?)(?:,\\s*(.*?))*\\)"
+    NSRegularExpression *parsingRegex = [NSRegularExpression regularExpressionWithPattern:@"(float|CGPoint|NSString|NSInteger)\\((.*?)(?:,\\s*(.*?))*\\)"
                                                                                   options:0
                                                                                     error:&regexError];
     
@@ -56,6 +57,22 @@
         Class theClass = NSClassFromString(filterName);
         id<ImageProcessingOperation> genericFilter = [[theClass alloc] init];
         // Set up the properties
+        if ([filterName isEqualToString:@"CustomFilter"]) {
+            NSDictionary *filterProperty;
+            if ((filterProperty = [filter objectForKey:@"Property"])) {
+                NSString *fragmentFunctionName = [filterProperty objectForKey:@"FragmentFunctionName"];
+                NSString *vertexFunctionName = [filterProperty objectForKey:@"VertexFunctionName"];
+                NSString *operationName = [filterProperty objectForKey:@"FilterName"];
+                NSInteger numberOfInputs = [[filterProperty objectForKey:@"NumberOfInputs"] integerValue];
+                genericFilter = [[BasicOperation alloc] initWithVertexFuntionName:vertexFunctionName fragmentFunctionName:fragmentFunctionName numberOfInputs:numberOfInputs operationName:operationName];
+                theClass = [BasicOperation class];
+            }
+        } else {
+            genericFilter = [[theClass alloc] init];
+        }
+        
+        
+        
         NSDictionary *filterAttributes;
         if ((filterAttributes = [filter objectForKey:@"Attributes"])) {
             for (NSString *propertyKey in filterAttributes) {
@@ -72,9 +89,11 @@
                     
                     // Then parse the arguments
                     NSMutableArray *parsedArray;
-                    if ([[filterAttributes objectForKey:propertyKey] isKindOfClass:[NSArray class]]) {
-                        NSArray *array = [filterAttributes objectForKey:propertyKey];
+                    NSArray *array = [filterAttributes objectForKey:propertyKey];
+                    if ([array isKindOfClass:[NSArray class]]) {
+                        
                         parsedArray = [NSMutableArray arrayWithCapacity:[array count]];
+                        int index = 2;
                         for (NSString *string in array) {
                             NSTextCheckingResult *parse = [parsingRegex firstMatchInString:string
                                                                                    options:0
@@ -83,25 +102,30 @@
                             NSString *modifier = [string substringWithRange:[parse rangeAtIndex:1]];
                             if ([modifier isEqualToString:@"float"]) {
                                 // Float modifier, one argument
-                                CGFloat value = [[string substringWithRange:[parse rangeAtIndex:2]] floatValue];
+                                float value = [[string substringWithRange:[parse rangeAtIndex:2]] floatValue];
                                 [parsedArray addObject:[NSNumber numberWithFloat:value]];
-                                [inv setArgument:&value atIndex:2];
+                                [inv setArgument:&value atIndex:index++];
                             } else if ([modifier isEqualToString:@"CGPoint"]) {
                                 // CGPoint modifier, two float arguments
                                 CGFloat x = [[string substringWithRange:[parse rangeAtIndex:2]] floatValue];
                                 CGFloat y = [[string substringWithRange:[parse rangeAtIndex:3]] floatValue];
                                 CGPoint value = CGPointMake(x, y);
                                 [parsedArray addObject:[NSValue valueWithCGPoint:value]];
+                                [inv setArgument:&value atIndex:index++];
                             } else if ([modifier isEqualToString:@"NSString"]) {
                                 // NSString modifier, one string argument
                                 _stringValue = [[string substringWithRange:[parse rangeAtIndex:2]] copy];
-                                [inv setArgument:&_stringValue atIndex:2];
+                                [inv setArgument:&_stringValue atIndex:index++];
                                 
+                            } else if ([modifier isEqualToString:@"NSInteger"]) {
+                                NSInteger value = [[string substringWithRange:[parse rangeAtIndex:2]] integerValue];
+                                [parsedArray addObject:[NSNumber numberWithFloat:value]];
+                                [inv setArgument:&value atIndex:index++];
                             } else {
                                 return NO;
                             }
                         }
-                        [inv setArgument:&parsedArray atIndex:2];
+                    
                     } else {
                         NSString *string = [filterAttributes objectForKey:propertyKey];
                         NSTextCheckingResult *parse = [parsingRegex firstMatchInString:string
@@ -111,7 +135,7 @@
                         NSString *modifier = [string substringWithRange:[parse rangeAtIndex:1]];
                         if ([modifier isEqualToString:@"float"]) {
                             // Float modifier, one argument
-                            CGFloat value = [[string substringWithRange:[parse rangeAtIndex:2]] floatValue];
+                            float value = [[string substringWithRange:[parse rangeAtIndex:2]] floatValue];
                             [inv setArgument:&value atIndex:2];
                         } else if ([modifier isEqualToString:@"CGPoint"]) {
                             // CGPoint modifier, two float arguments
@@ -124,6 +148,10 @@
                             _stringValue = [[string substringWithRange:[parse rangeAtIndex:2]] copy];
                             [inv setArgument:&_stringValue atIndex:2];
                             
+                        } else if ([modifier isEqualToString:@"NSInteger"]) {
+                            NSInteger value = [[string substringWithRange:[parse rangeAtIndex:2]] integerValue];
+                            [parsedArray addObject:[NSNumber numberWithFloat:value]];
+                            [inv setArgument:&value atIndex:2];
                         } else {
                             return NO;
                         }

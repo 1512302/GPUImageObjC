@@ -9,7 +9,6 @@
 #import "MetalRendering.h"
 #import "MetalRenderingDevice.h"
 #import "ShaderUniformSettings.h"
-#import "CommonFuntion.h"
 
 float standardImageVertices[] = {-1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0};
 
@@ -25,12 +24,11 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
                 Texture *outputTexture,
                 ImageOrientation outputOrientation) {
     
-    if (!imageVertices) {
+        if (!imageVertices) {
         imageVertices = standardImageVertices;
         imageVerticesSize = sizeof(standardImageVertices);
-    } else {
-        NSLog(@"Customize");
     }
+    
     id<MTLBuffer> vertexBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:imageVertices length:imageVerticesSize options:MTLResourceOptionCPUCacheModeDefault];
     vertexBuffer.label = @"Vertices";
     
@@ -41,12 +39,18 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
     renderPass.colorAttachments[0].storeAction = MTLStoreActionStore;
     renderPass.colorAttachments[0].loadAction = MTLLoadActionClear;
     
+    //CFAbsoluteTime startTime1 = CFAbsoluteTimeGetCurrent();
     id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPass];
     
+//    NSLog(@"Mono test create: %lf", 1000 * (CFAbsoluteTimeGetCurrent() - startTime1));
+//    startTime1 = CFAbsoluteTimeGetCurrent();
+    
     [renderEncoder setFrontFacingWinding:MTLWindingCounterClockwise];
+    
     [renderEncoder setRenderPipelineState:pipelineState];
+    
+    
     [renderEncoder setVertexBuffer:vertexBuffer offset:0 atIndex:0];
-    [renderEncoder setFragmentTexture:inputTextures.allValues[0].texture atIndex:0];
     
     for (NSUInteger textureIndex = 0; textureIndex < inputTextures.count; ++textureIndex) {
         NSNumber *key = @(textureIndex);
@@ -54,18 +58,25 @@ void renderQuad(id<MTLCommandBuffer> commandBuffer,
         if (!currentTexture) {
             continue;
         }
-        [currentTexture textureCoodinatesForOutputOrientation:outputOrientation normalized:useNormalizedTextureCoordinates completion:^(float *vertexs, int size) {
-            if (vertexs) {
-                id<MTLBuffer> textureBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:vertexs length:sizeof(float) * size options:MTLResourceOptionCPUCacheModeDefault];
-                textureBuffer.label = @"Texture Coordinates";
-                
-                [renderEncoder setVertexBuffer:textureBuffer offset:0 atIndex: 1 + textureIndex];
-                [renderEncoder setFragmentTexture:currentTexture.texture atIndex:textureIndex];
-                
-            }
-        }];
+        
+        float *vertexs = [currentTexture textureCoodinatesForOutputOrientation:outputOrientation];
+        
+        id<MTLBuffer> textureBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:vertexs length:sizeof(float) * 8 options:MTLResourceOptionCPUCacheModeDefault];
+        textureBuffer.label = @"Texture Coordinates";
+
+        [renderEncoder setVertexBuffer:textureBuffer offset:0 atIndex: 1 + textureIndex];
+        [renderEncoder setFragmentTexture:currentTexture.texture atIndex:textureIndex];
+//        [currentTexture textureCoodinatesForOutputOrientation:outputOrientation normalized:useNormalizedTextureCoordinates completion:^(float *vertexs, int size) {
+//            if (vertexs) {
+//                id<MTLBuffer> textureBuffer = [[MetalRenderingDevice shared].device newBufferWithBytes:vertexs length:sizeof(float) * size options:MTLResourceOptionCPUCacheModeDefault];
+//                textureBuffer.label = @"Texture Coordinates";
+//
+//                [renderEncoder setVertexBuffer:textureBuffer offset:0 atIndex: 1 + textureIndex];
+//                [renderEncoder setFragmentTexture:currentTexture.texture atIndex:textureIndex];
+//            }
+//        }];
     }
-    
+
     if (uniformSettings) {
         [uniformSettings restoreShaderSettingWithRenderEncoder:renderEncoder];
     }

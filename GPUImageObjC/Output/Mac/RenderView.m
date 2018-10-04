@@ -92,7 +92,8 @@
         
         if (commandBuffer) {
             [commandBuffer presentDrawable:currentDrawable];
-            [commandBuffer commit];	
+            [commandBuffer commit];
+
         }
         
     }

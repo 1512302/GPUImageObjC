@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9352482821646DDD00E58072 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352482621646DDD00E58072 /* CommonFuntion.m */; };
+		9352482921646E4D00E58072 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352482621646DDD00E58072 /* CommonFuntion.m */; };
 		937AB4522152638D00DB67B0 /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 937AB4512152632400DB67B0 /* RenderView.m */; };
 		9382E4592150DED600BB6814 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E4582150DED600BB6814 /* Camera.m */; };
 		9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */; };
@@ -21,7 +23,6 @@
 		9382E47A2151245A00BB6814 /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A912149223E00B30E83 /* Texture.m */; };
 		9382E47B2151245C00BB6814 /* Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A932149225E00B30E83 /* Timestamp.m */; };
 		9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A86214921B100B30E83 /* ImageOrientation.m */; };
-		9382E47D2151246600BB6814 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A842149219600B30E83 /* CommonFuntion.m */; };
 		9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A962149226B00B30E83 /* ShaderUniformSettings.m */; };
 		9382E47F2151246C00BB6814 /* MetalRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A8C2149220400B30E83 /* MetalRendering.m */; };
 		9382E4802151246E00BB6814 /* MetalRenderingDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A892149220400B30E83 /* MetalRenderingDevice.m */; };
@@ -57,7 +58,6 @@
 		93B05A7E2149215800B30E83 /* ImageProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A772149215800B30E83 /* ImageProcessingOperation.m */; };
 		93B05A7F2149215800B30E83 /* TargetContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A782149215800B30E83 /* TargetContainer.m */; };
 		93B05A802149215800B30E83 /* SourceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A792149215800B30E83 /* SourceContainer.m */; };
-		93B05A852149219600B30E83 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A842149219600B30E83 /* CommonFuntion.m */; };
 		93B05A88214921B100B30E83 /* ImageOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A86214921B100B30E83 /* ImageOrientation.m */; };
 		93B05A8D2149220400B30E83 /* MetalRenderingDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A892149220400B30E83 /* MetalRenderingDevice.m */; };
 		93B05A8E2149220400B30E83 /* MetalRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A8C2149220400B30E83 /* MetalRendering.m */; };
@@ -79,9 +79,13 @@
 		93C75C85215CD66B0024565D /* Luminance.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C83215CD66B0024565D /* Luminance.m */; };
 		93C75C8A215CF27F0024565D /* FilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C89215CF27F0024565D /* FilterPipeline.m */; };
 		93C75C8B215CF27F0024565D /* FilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C89215CF27F0024565D /* FilterPipeline.m */; };
+		93E2032621660D560088F0DC /* LookupFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032521660D560088F0DC /* LookupFilter.metal */; };
+		93E2032721660D560088F0DC /* LookupFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032521660D560088F0DC /* LookupFilter.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9352482621646DDD00E58072 /* CommonFuntion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFuntion.m; sourceTree = "<group>"; };
+		9352482721646DDD00E58072 /* CommonFuntion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFuntion.h; sourceTree = "<group>"; };
 		937AB4512152632400DB67B0 /* RenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenderView.m; sourceTree = "<group>"; };
 		9382E4572150DED600BB6814 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		9382E4582150DED600BB6814 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
@@ -130,8 +134,6 @@
 		93B05A772149215800B30E83 /* ImageProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProcessingOperation.m; sourceTree = "<group>"; };
 		93B05A782149215800B30E83 /* TargetContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetContainer.m; sourceTree = "<group>"; };
 		93B05A792149215800B30E83 /* SourceContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceContainer.m; sourceTree = "<group>"; };
-		93B05A832149219600B30E83 /* CommonFuntion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFuntion.h; sourceTree = "<group>"; };
-		93B05A842149219600B30E83 /* CommonFuntion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFuntion.m; sourceTree = "<group>"; };
 		93B05A86214921B100B30E83 /* ImageOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOrientation.m; sourceTree = "<group>"; };
 		93B05A87214921B100B30E83 /* ImageOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageOrientation.h; sourceTree = "<group>"; };
 		93B05A892149220400B30E83 /* MetalRenderingDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalRenderingDevice.m; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		93C75C86215CD7920024565D /* Filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
 		93C75C88215CF27F0024565D /* FilterPipeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterPipeline.h; sourceTree = "<group>"; };
 		93C75C89215CF27F0024565D /* FilterPipeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterPipeline.m; sourceTree = "<group>"; };
+		93E2032521660D560088F0DC /* LookupFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = LookupFilter.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,7 @@
 		93AD12DC214B474A00F803F9 /* Color processing */ = {
 			isa = PBXGroup;
 			children = (
+				93E2032521660D560088F0DC /* LookupFilter.metal */,
 				93C75C7F215CD5C00024565D /* Luminance.metal */,
 				93C75C82215CD66B0024565D /* Luminance.h */,
 				93C75C83215CD66B0024565D /* Luminance.m */,
@@ -308,8 +312,8 @@
 		93B05A822149218A00B30E83 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				93B05A832149219600B30E83 /* CommonFuntion.h */,
-				93B05A842149219600B30E83 /* CommonFuntion.m */,
+				9352482721646DDD00E58072 /* CommonFuntion.h */,
+				9352482621646DDD00E58072 /* CommonFuntion.m */,
 				93A6B96F21549C4F00600991 /* Benmark.h */,
 				93A6B97021549C4F00600991 /* Benmark.m */,
 			);
@@ -504,7 +508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9382E47D2151246600BB6814 /* CommonFuntion.m in Sources */,
 				9382E4782151244100BB6814 /* Camera.m in Sources */,
 				9382E46821510DCA00BB6814 /* ViewController.m in Sources */,
 				9382E4832151247D00BB6814 /* ImageProcessingOperation.m in Sources */,
@@ -517,12 +520,14 @@
 				9382E48A2151249500BB6814 /* BlendShaderTypes.metal in Sources */,
 				9382E47321510DDB00BB6814 /* main.m in Sources */,
 				93A6B9632153A4F300600991 /* SaturationAdjustment.metal in Sources */,
+				9352482921646E4D00E58072 /* CommonFuntion.m in Sources */,
 				93A6B9622153A4F100600991 /* SaturationAdjustment.m in Sources */,
 				93C75C85215CD66B0024565D /* Luminance.m in Sources */,
 				9382E47B2151245C00BB6814 /* Timestamp.m in Sources */,
 				9382E47C2151245E00BB6814 /* ImageOrientation.m in Sources */,
 				9382E47E2151246900BB6814 /* ShaderUniformSettings.m in Sources */,
 				9382E47A2151245A00BB6814 /* Texture.m in Sources */,
+				93E2032721660D560088F0DC /* LookupFilter.metal in Sources */,
 				9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */,
 				9382E4802151246E00BB6814 /* MetalRenderingDevice.m in Sources */,
 				9382E4882151248E00BB6814 /* BasicOperation.m in Sources */,
@@ -550,7 +555,6 @@
 				93B05A5B21491F9800B30E83 /* ViewController.m in Sources */,
 				93A6B979215C94E900600991 /* ColorInversion.m in Sources */,
 				93B05A922149223E00B30E83 /* Texture.m in Sources */,
-				93B05A852149219600B30E83 /* CommonFuntion.m in Sources */,
 				93B05A6321491F9B00B30E83 /* main.m in Sources */,
 				93B05AAB214923FC00B30E83 /* Passthrough.metal in Sources */,
 				93B05AAD21492D2A00B30E83 /* Shaders.metal in Sources */,
@@ -567,10 +571,12 @@
 				93B05A7F2149215800B30E83 /* TargetContainer.m in Sources */,
 				93B05AAA214923FC00B30E83 /* BasicOperation.m in Sources */,
 				93B05A7A2149215800B30E83 /* Pipeline.m in Sources */,
+				9352482821646DDD00E58072 /* CommonFuntion.m in Sources */,
 				93B05A7E2149215800B30E83 /* ImageProcessingOperation.m in Sources */,
 				93B05A7C2149215800B30E83 /* WeakImageConsumer.m in Sources */,
 				93AD12DE214B476300F803F9 /* SaturationAdjustment.metal in Sources */,
 				93AD12E1214B492F00F803F9 /* SaturationAdjustment.m in Sources */,
+				93E2032621660D560088F0DC /* LookupFilter.metal in Sources */,
 				93C75C8A215CF27F0024565D /* FilterPipeline.m in Sources */,
 				93B05AB3214A10C900B30E83 /* BlendShaderTypes.metal in Sources */,
 				93B05A9F2149236500B30E83 /* PictureInput.m in Sources */,

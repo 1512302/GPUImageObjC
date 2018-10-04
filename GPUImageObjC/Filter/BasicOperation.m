@@ -108,9 +108,15 @@
         
         [self updateTargetsWithTexture:outputTexture];
     }
-    
-    
     dispatch_semaphore_signal(_textureInputSemaphore);
+}
+
+- (void)setSizeOfAttribute:(NSUInteger)size {
+    _uniformSetting = [[ShaderUniformSettings alloc] initWithLength:size];
+}
+
+- (void)setUniformValue:(float)value atIndex:(NSUInteger)index {
+    [_uniformSetting setValue:value atIndex:index];
 }
 
 @end

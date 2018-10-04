@@ -12,25 +12,25 @@
 
 #define kNumOfArray 8
 
-const float yLimit = 1.0;
+static const float yLimit = 1.0;
 
-const float xLimit = 1.0;
+static const float xLimit = 1.0;
 
-const float temp1[] = {0.0, yLimit, 0.0, 0.0, xLimit, yLimit, xLimit, 0.0};
+static const float temp1[] = {0.0, yLimit, 0.0, 0.0, xLimit, yLimit, xLimit, 0.0};
 
-const float temp2[] = {xLimit, 0.0, xLimit, yLimit, 0.0, 0.0, 0.0, yLimit};
+static const float temp2[] = {xLimit, 0.0, xLimit, yLimit, 0.0, 0.0, 0.0, yLimit};
 
-const float temp3[] = {xLimit, yLimit, 0.0, yLimit, xLimit, 0.0, 0.0, 0.0};
+static const float temp3[] = {xLimit, yLimit, 0.0, yLimit, xLimit, 0.0, 0.0, 0.0};
 
-const float temp4[] = {xLimit, 0.0, 0.0, 0.0, xLimit, yLimit, 0.0, yLimit};
+static const float temp4[] = {xLimit, 0.0, 0.0, 0.0, xLimit, yLimit, 0.0, yLimit};
 
-const float temp5[] = {0.0, yLimit, xLimit, yLimit, 0.0, 0.0, xLimit, 0.0};
+static const float temp5[] = {0.0, yLimit, xLimit, yLimit, 0.0, 0.0, xLimit, 0.0};
 
-const float temp6[] = {0.0, 0.0, 0.0, yLimit, xLimit, 0.0, xLimit, yLimit};
+static const float temp6[] = {0.0, 0.0, 0.0, yLimit, xLimit, 0.0, xLimit, yLimit};
 
-const float temp7[] = {xLimit, yLimit, xLimit, 0.0, 0.0, yLimit, 0.0, 0.0};
+static const float temp7[] = {xLimit, yLimit, xLimit, 0.0, 0.0, yLimit, 0.0, 0.0};
 
-const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit}; //potrait
+static const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit}; //potrait
 
 
 /// {-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0};
@@ -71,15 +71,7 @@ const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit}; //po
 - (void)textureCoodinatesForOutputOrientation:(ImageOrientation)outputOrientation normalized:(boolean_t)normalized completion:(void(^)(float *vertexs, int size))completion {
     Rotation inputRotation = rotation(self.orientation, outputOrientation);
     
-    float xLimit = 1.0;
-    float yLimit = 1.0;
-    
     float *result;
-    int size = 8;
-    if (!normalized) {
-        xLimit = self.texture.width;
-        yLimit = self.texture.height;
-    }
     
     switch (inputRotation) {
         case RotationCounterclockwise: {
@@ -122,7 +114,52 @@ const float temp8[] = {0.0, 0.0, xLimit, 0.0, 0.0, yLimit, xLimit, yLimit}; //po
         }
     }
     if (completion) {
-        completion(result, size);
+        completion(result, 8);
+    }
+}
+
+- (float *)textureCoodinatesForOutputOrientation:(ImageOrientation)outputOrientation {
+    Rotation inputRotation = rotation(self.orientation, outputOrientation);
+
+    switch (inputRotation) {
+        case RotationCounterclockwise: {
+            return (float *)temp1;
+            break;
+        }
+        case RotationClockwise: {
+            return (float *)temp2;
+            break;
+        }
+        case Rotation180: {
+            return (float *)temp3;
+            break;
+        }
+            
+        case RotationFlipHorizontally: {
+            return (float *)temp4;
+            break;
+        }
+            
+        case RotationFlipVertically: {
+            return (float *)temp5;
+            break;
+        }
+            
+        case RotationClockwiseAndFlipVertically: {
+            return (float *)temp6;
+            break;
+        }
+            
+        case RotationClockwiseAndFlipHorizontally: {
+            return (float *)temp7;
+            break;
+        }
+            
+        case RotationNone:
+        default: {
+            return (float *)temp8;
+            break;
+        }
     }
 }
 
