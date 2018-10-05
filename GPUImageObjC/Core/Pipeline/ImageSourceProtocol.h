@@ -29,7 +29,7 @@
 
 - (void)updateTargetsWithTexture:(Texture *)texture;
 
-- (id<ImageConsumer>) additionPrecedence:(id<ImageConsumer>)destination;
+- (id<ImageConsumer>) addPrecedence:(id<ImageConsumer>)destination;
 
 @end
 

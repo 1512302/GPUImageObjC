@@ -37,7 +37,7 @@
     
     _image = [[PictureInput alloc] initWithCGImage:cgImage];
     [_image additionPrecedence:_filter];
-    [_filter additionPrecedence:_renderView];
+    [_filter addPrecedence:_renderView];
     [_image processImage];
 }
 

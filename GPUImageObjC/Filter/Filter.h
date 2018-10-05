@@ -14,5 +14,6 @@
 #import "ColorInversion.h"
 #import "Luminance.h"
 #import "FilterPipeline.h"
+#import "LookupFilter.h"
 
 #endif /* Filter_h */

@@ -42,6 +42,7 @@
     _renderPipelineState = generateRenderPipelineState([MetalRenderingDevice shared], @"oneInputVertex", @"passthroughFragment", @"RenderView");
     self.enableSetNeedsDisplay = NO;
     [self setPaused:YES];
+    _scaleNeeded = true;
 }
 
 #pragma mark - implementation MTKView
@@ -96,10 +97,10 @@
         
         //renderQuadDefault(&commandBuffer, _renderPipelineState, @{@(0): imageTexture}, outputTexture);
         
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
+        if (_scaleNeeded) {
             [self scaleView];
-        });
+            _scaleNeeded = false;
+        }
 
         float imageVertex[] = {-_xMax, _yMax, _xMax, _yMax, -_xMax, -_yMax, _xMax, -_yMax};
         renderQuad(commandBuffer, _renderPipelineState, nil,  @{@(0): imageTexture}, true, imageVertex, sizeof(imageVertex), outputTexture, ImageOrientationPortrait);
@@ -120,11 +121,6 @@
     float imageWidth = (float)self.currentTexture.texture.width;
     float viewHeight = self.layer.frame.size.height;
     float viewWidth = self.layer.frame.size.width;
-    if ((imageHeight > imageWidth) != (viewHeight > viewWidth)) {
-        float temp = imageWidth;
-        imageWidth = imageHeight;
-        imageHeight = temp;
-    }
     
     float xMax = imageWidth * viewHeight / (imageHeight * viewWidth);
     if (xMax < 1.0) {

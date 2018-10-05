@@ -94,11 +94,11 @@ NSUInteger initialBenchmarkFramesToIgnore = 5;
 }
 
 - (void)dealloc {
-    __weak __typeof(self) weakSelf = self;
+    //__weak __typeof(self) weakSelf = self;
     dispatch_sync(_cameraFrameProcessingQueue, ^{
-        [weakSelf stopCapture];
-        if (weakSelf.videoOutput) {
-            [weakSelf.videoOutput setSampleBufferDelegate:nil queue:nil];
+        [self stopCapture];
+        if (self.videoOutput) {
+            [self.videoOutput setSampleBufferDelegate:nil queue:nil];
         }
     });
 }

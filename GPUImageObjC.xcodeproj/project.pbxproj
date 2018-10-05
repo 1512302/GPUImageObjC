@@ -10,7 +10,6 @@
 		9352482821646DDD00E58072 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352482621646DDD00E58072 /* CommonFuntion.m */; };
 		9352482921646E4D00E58072 /* CommonFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352482621646DDD00E58072 /* CommonFuntion.m */; };
 		937AB4522152638D00DB67B0 /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 937AB4512152632400DB67B0 /* RenderView.m */; };
-		9382E4592150DED600BB6814 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E4582150DED600BB6814 /* Camera.m */; };
 		9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */; };
 		9382E46521510DCA00BB6814 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E46421510DCA00BB6814 /* AppDelegate.m */; };
 		9382E46821510DCA00BB6814 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382E46721510DCA00BB6814 /* ViewController.m */; };
@@ -81,6 +80,10 @@
 		93C75C8B215CF27F0024565D /* FilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C75C89215CF27F0024565D /* FilterPipeline.m */; };
 		93E2032621660D560088F0DC /* LookupFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032521660D560088F0DC /* LookupFilter.metal */; };
 		93E2032721660D560088F0DC /* LookupFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032521660D560088F0DC /* LookupFilter.metal */; };
+		93E2032E21671CD60088F0DC /* LookupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032D21671CD60088F0DC /* LookupFilter.m */; };
+		93E2032F21671CD60088F0DC /* LookupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E2032D21671CD60088F0DC /* LookupFilter.m */; };
+		93E20334216724350088F0DC /* PictureInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E20333216724350088F0DC /* PictureInput.m */; };
+		93E2033D21677A9A0088F0DC /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E2033B21677A9A0088F0DC /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +168,12 @@
 		93C75C88215CF27F0024565D /* FilterPipeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterPipeline.h; sourceTree = "<group>"; };
 		93C75C89215CF27F0024565D /* FilterPipeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterPipeline.m; sourceTree = "<group>"; };
 		93E2032521660D560088F0DC /* LookupFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = LookupFilter.metal; sourceTree = "<group>"; };
+		93E2032C21671CD50088F0DC /* LookupFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookupFilter.h; sourceTree = "<group>"; };
+		93E2032D21671CD60088F0DC /* LookupFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LookupFilter.m; sourceTree = "<group>"; };
+		93E20333216724350088F0DC /* PictureInput.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureInput.m; sourceTree = "<group>"; };
+		93E2033A21677A9A0088F0DC /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		93E2033B21677A9A0088F0DC /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		93E2033E21677DBC0088F0DC /* FilterEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterEntity.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,11 +202,14 @@
 				9382E46421510DCA00BB6814 /* AppDelegate.m */,
 				9382E46621510DCA00BB6814 /* ViewController.h */,
 				9382E46721510DCA00BB6814 /* ViewController.m */,
+				93E2033A21677A9A0088F0DC /* TableViewController.h */,
+				93E2033B21677A9A0088F0DC /* TableViewController.m */,
 				9382E46921510DCA00BB6814 /* Main.storyboard */,
 				9382E46C21510DDB00BB6814 /* Assets.xcassets */,
 				9382E46E21510DDB00BB6814 /* LaunchScreen.storyboard */,
 				9382E47121510DDB00BB6814 /* Info.plist */,
 				9382E47221510DDB00BB6814 /* main.m */,
+				93E2033E21677DBC0088F0DC /* FilterEntity.h */,
 			);
 			path = GPUImage4iOS;
 			sourceTree = "<group>";
@@ -206,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				93E2032521660D560088F0DC /* LookupFilter.metal */,
+				93E2032C21671CD50088F0DC /* LookupFilter.h */,
+				93E2032D21671CD60088F0DC /* LookupFilter.m */,
 				93C75C7F215CD5C00024565D /* Luminance.metal */,
 				93C75C82215CD66B0024565D /* Luminance.h */,
 				93C75C83215CD66B0024565D /* Luminance.m */,
@@ -323,6 +337,7 @@
 		93B05A992149232100B30E83 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				93B05A9D2149236500B30E83 /* PictureInput.h */,
 				93B05A9B2149236500B30E83 /* iOS */,
 				93B05A9C2149236500B30E83 /* Mac */,
 			);
@@ -346,6 +361,7 @@
 				9382E4582150DED600BB6814 /* Camera.m */,
 				9382E45A2150E11600BB6814 /* PhysicalCameraLocation.h */,
 				9382E45B2150E11600BB6814 /* PhysicalCameraLocation.m */,
+				93E20333216724350088F0DC /* PictureInput.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -353,7 +369,6 @@
 		93B05A9C2149236500B30E83 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				93B05A9D2149236500B30E83 /* PictureInput.h */,
 				93B05A9E2149236500B30E83 /* PictureInput.m */,
 			);
 			path = Mac;
@@ -511,6 +526,7 @@
 				9382E4782151244100BB6814 /* Camera.m in Sources */,
 				9382E46821510DCA00BB6814 /* ViewController.m in Sources */,
 				9382E4832151247D00BB6814 /* ImageProcessingOperation.m in Sources */,
+				93E20334216724350088F0DC /* PictureInput.m in Sources */,
 				9382E47F2151246C00BB6814 /* MetalRendering.m in Sources */,
 				9382E4812151247700BB6814 /* Pipeline.m in Sources */,
 				93C75C81215CD5C00024565D /* Luminance.metal in Sources */,
@@ -536,9 +552,11 @@
 				9382E4862151248700BB6814 /* TargetContainer.m in Sources */,
 				9382E4852151248500BB6814 /* SourceContainer.m in Sources */,
 				9382E4792151244600BB6814 /* PhysicalCameraLocation.m in Sources */,
+				93E2032F21671CD60088F0DC /* LookupFilter.m in Sources */,
 				93BB82D3215CB33F00955C08 /* ColorInversion.metal in Sources */,
 				9382E4822151247A00BB6814 /* ImageConsumerProtocol.m in Sources */,
 				937AB4522152638D00DB67B0 /* RenderView.m in Sources */,
+				93E2033D21677A9A0088F0DC /* TableViewController.m in Sources */,
 				93A6B97F215CB01600600991 /* ColorInversion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,13 +580,13 @@
 				93B05A88214921B100B30E83 /* ImageOrientation.m in Sources */,
 				93B05A8D2149220400B30E83 /* MetalRenderingDevice.m in Sources */,
 				93B05A7B2149215800B30E83 /* ImageConsumerProtocol.m in Sources */,
-				9382E4592150DED600BB6814 /* Camera.m in Sources */,
 				93B05A802149215800B30E83 /* SourceContainer.m in Sources */,
 				9382E45C2150E11600BB6814 /* PhysicalCameraLocation.m in Sources */,
 				93B05A952149225E00B30E83 /* Timestamp.m in Sources */,
 				93C75C80215CD5C00024565D /* Luminance.metal in Sources */,
 				93B05A5821491F9800B30E83 /* AppDelegate.m in Sources */,
 				93B05A7F2149215800B30E83 /* TargetContainer.m in Sources */,
+				93E2032E21671CD60088F0DC /* LookupFilter.m in Sources */,
 				93B05AAA214923FC00B30E83 /* BasicOperation.m in Sources */,
 				93B05A7A2149215800B30E83 /* Pipeline.m in Sources */,
 				9352482821646DDD00E58072 /* CommonFuntion.m in Sources */,

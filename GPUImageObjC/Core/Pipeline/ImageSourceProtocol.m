@@ -40,7 +40,7 @@
     updateTargetsWithTextureForImageSource(texture, self);
 }
 
-- (id<ImageConsumer>)additionPrecedence:(id<ImageConsumer>)destination {
+- (id<ImageConsumer>)addPrecedence:(id<ImageConsumer>)destination {
     return additionPrecedence(self, destination);
 }
 

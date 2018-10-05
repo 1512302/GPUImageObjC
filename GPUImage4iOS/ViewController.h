@@ -12,7 +12,7 @@
 
 @interface ViewController : UIViewController
 
-
+@property (nonatomic, readwrite, strong) NSString *filterName;
 
 @end
 

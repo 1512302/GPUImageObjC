@@ -24,6 +24,8 @@
 
 @property (nonatomic, readwrite) ImageOrientation orientation;
 
+@property (nonatomic, readwrite) Boolean scaleNeeded;
+
 // Override MTKView
 - (instancetype)initWithCoder:(NSCoder *)coder;
 
